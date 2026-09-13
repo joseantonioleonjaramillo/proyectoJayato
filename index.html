@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jayato Store — Productos de anime</title>
+  <meta name="description" content="Figuras, pósters, ropa y accesorios de anime.">
+
+  <!-- Tipografías: una condensada para títulos (estilo tomo de manga) y una clara para el texto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="site-header">
+    <div class="wrap site-header__row">
+      <a href="#" class="logo">Jayato<span>Store</span></a>
+
+      <nav class="main-nav">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#destacado">Destacado</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <button class="cart-btn" id="cartBtn" aria-label="Ver carrito">
+        Carrito
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero__ink"></div>
+    <div class="wrap hero__content">
+      <p class="hero__kicker">Nueva colección de temporada</p>
+      <h1 class="hero__title">Tu rincón<br>otaku empieza<br>acá.</h1>
+      <p class="hero__text">Figuras, pósters, remeras y accesorios de tus animes
+        favoritos, elegidos para fans que cuidan cada detalle.</p>
+      <a href="#catalogo" class="btn btn--primary">Ver catálogo</a>
+    </div>
+  </section>
+
+  <!-- ===== FILTROS DE CATEGORÍA ===== -->
+  <section class="wrap categories" id="catalogo">
+    <button class="chip is-active" data-filter="todos">Todos</button>
+    <button class="chip" data-filter="figuras">Figuras</button>
+    <button class="chip" data-filter="posters">Pósters</button>
+    <button class="chip" data-filter="ropa">Ropa</button>
+    <button class="chip" data-filter="accesorios">Accesorios</button>
+  </section>
+
+  <!-- ===== PRODUCTO DESTACADO ===== -->
+  <section class="wrap featured" id="destacado">
+    <div class="featured__img" style="background-color:#D62828">
+      <span>Imagen del producto</span>
+    </div>
+    <div class="featured__info">
+      <p class="featured__label">Producto destacado</p>
+      <h2 class="featured__title">Figura Katana Ronin, edición limitada</h2>
+      <p class="featured__text">Escala 1/7, 24 cm de altura, base con luz LED
+        incluida. Quedan pocas unidades de esta edición.</p>
+      <p class="price">$45.000</p>
+      <button class="btn btn--primary add-to-cart" data-name="Figura Katana Ronin" data-price="45000">
+        Agregar al carrito
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== GRILLA DE PRODUCTOS ===== -->
+  <section class="wrap product-grid" id="productGrid">
+    <!-- Las tarjetas se generan con JavaScript desde script.js -->
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" id="contacto">
+    <div class="wrap site-footer__row">
+      <div>
+        <p class="logo logo--footer">Kaiju<span>Store</span></p>
+        <p class="site-footer__text">Envíos a todo el país. Pagos con tarjeta,
+          transferencia y efectivo.</p>
+      </div>
+      <div class="site-footer__links">
+        <p>hola@kaijustore.com</p>
+        <p>@kaijustore</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== CARRITO (panel lateral simple) ===== -->
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-panel__head">
+      <h3>Tu carrito</h3>
+      <button id="cartClose" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <ul class="cart-panel__list" id="cartList"></ul>
+    <div class="cart-panel__total">
+      Total: <strong id="cartTotal">$0</strong>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

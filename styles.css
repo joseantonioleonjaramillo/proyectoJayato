@@ -1,0 +1,404 @@
+/* =========================================
+   TOKENS: paleta, tipografía y espaciados
+   ========================================= */
+:root {
+  --ink: #14120f;         /* negro tinta, para textos y fondos oscuros */
+  --paper: #f1ede2;       /* fondo crema tipo papel */
+  --red: #d62828;         /* rojo sello de manga, color de marca */
+  --yellow: #f4a100;      /* acento cálido, uso puntual */
+  --gray: #6b6a63;        /* texto secundario */
+  --line: #ddd6c4;        /* líneas y bordes suaves */
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+
+  --radius: 6px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+a { color: inherit; }
+
+/* =========================================
+   BOTONES
+   ========================================= */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn--primary {
+  background: var(--red);
+  color: var(--paper);
+}
+.btn--primary:hover { background: #b81f1f; }
+
+/* =========================================
+   ENCABEZADO
+   ========================================= */
+.site-header {
+  background: var(--ink);
+  color: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.site-header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: var(--paper);
+}
+.logo span { color: var(--red); }
+
+.main-nav {
+  display: flex;
+  gap: 32px;
+}
+.main-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.main-nav a:hover { color: var(--red); }
+
+.cart-btn {
+  position: relative;
+  background: none;
+  border: 1px solid var(--paper);
+  color: var(--paper);
+  border-radius: var(--radius);
+  padding: 8px 16px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+}
+.cart-count {
+  background: var(--red);
+  color: var(--paper);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  margin-left: 6px;
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+.hero {
+  position: relative;
+  background: var(--ink);
+  color: var(--paper);
+  overflow: hidden;
+  padding: 96px 0 120px;
+}
+
+/* Textura de puntos tipo trama de manga, sutil, detrás del texto */
+.hero__ink {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(241,237,226,0.08) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  pointer-events: none;
+}
+
+.hero__content { position: relative; max-width: 640px; }
+
+.hero__kicker {
+  color: var(--red);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hero__title {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  line-height: 1.02;
+  margin-bottom: 20px;
+}
+
+.hero__text {
+  color: #cfc9b8;
+  max-width: 42ch;
+  margin-bottom: 32px;
+}
+
+/* =========================================
+   FILTROS DE CATEGORÍA
+   ========================================= */
+.categories {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 48px;
+  padding-bottom: 8px;
+}
+
+.chip {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.chip.is-active,
+.chip:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* =========================================
+   PRODUCTO DESTACADO
+   ========================================= */
+.featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 48px 24px 64px;
+}
+
+.featured__img {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(241,237,226,0.85);
+  font-weight: 600;
+}
+
+.featured__label {
+  color: var(--red);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.featured__title {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.featured__text {
+  color: var(--gray);
+  margin-bottom: 20px;
+  max-width: 46ch;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  margin: 0 0 20px;
+}
+
+/* =========================================
+   GRILLA DE PRODUCTOS
+   ========================================= */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 24px 24px 96px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__img {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.card__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.card__category {
+  color: var(--gray);
+  font-size: 0.8rem;
+  text-transform: lowercase;
+}
+
+.card__name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.card__price {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-top: auto;
+}
+
+.card__add {
+  margin-top: 10px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.card__add:hover { background: var(--red); }
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.site-footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 48px 0;
+}
+
+.site-footer__row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.logo--footer { margin-bottom: 8px; }
+
+.site-footer__text {
+  color: #b8b2a0;
+  max-width: 40ch;
+  font-size: 0.9rem;
+}
+
+.site-footer__links p { margin: 4px 0; font-size: 0.9rem; }
+
+/* =========================================
+   PANEL DE CARRITO
+   ========================================= */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: -360px;
+  width: 340px;
+  height: 100%;
+  background: var(--paper);
+  box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+  padding: 24px;
+  transition: right 0.25s ease;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+}
+.cart-panel.is-open { right: 0; }
+
+.cart-panel__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.cart-panel__head button {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.cart-panel__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+.cart-panel__list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.cart-panel__total {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 1.1rem;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 30;
+}
+.overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 800px) {
+  .main-nav { display: none; }
+  .featured { grid-template-columns: 1fr; }
+}
