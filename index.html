@@ -1,108 +1,216 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-PE">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>jayato Store — Productos de anime</title>
-  <meta name="description" content="Figuras, pósters, ropa y accesorios de anime.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jayato Store — Figuras de anime con envío a todo el Perú</title>
+  <meta name="description" content="Figuras de anime en edición limitada y personajes clásicos. Envíos a todo el Perú. Paga con tarjeta, transferencia o efectivo.">
+  <meta name="theme-color" content="#14173D">
 
-  <!-- Tipografías: una condensada para títulos (estilo tomo de manga) y una clara para el texto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ===== ENCABEZADO ===== -->
-  <header class="site-header">
-    <div class="wrap site-header__row">
-      <a href="#" class="logo">Jayato<span>Store</span></a>
+  <a class="saltar" href="#catalogo">Saltar al catálogo</a>
 
-      <nav class="main-nav">
-        <a href="#catalogo">Catálogo</a>
-        <a href="#destacado">Destacado</a>
-        <a href="#contacto">Contacto</a>
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="logo" href="#inicio" aria-label="Jayato Store, inicio">Jayato<span>Store</span></a>
+      <nav class="menu" aria-label="Principal">
+        <a href="#catalogo">Figuras</a>
+        <a href="#como-comprar">Cómo comprar</a>
+        <a href="#preguntas">Preguntas</a>
       </nav>
-
-      <button class="cart-btn" id="cartBtn" aria-label="Ver carrito">
-        Carrito
-        <span class="cart-count" id="cartCount">0</span>
-      </button>
+      <a class="boton boton--chico" href="#contacto">Escríbenos</a>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="hero__ink"></div>
-    <div class="wrap hero__content">
-      <p class="hero__kicker">Nueva colección de temporada</p>
-      <h1 class="hero__title">Tu rincón<br>otaku empieza<br>AQUI.</h1>
-      <p class="hero__text">Figuras, pósters, remeras y accesorios de tus animes
-        favoritos, elegidos para fans que cuidan cada detalle.</p>
-      <a href="#catalogo" class="btn btn--primary">Ver catálogo</a>
-    </div>
-  </section>
+  <main id="inicio">
 
-  <!-- ===== FILTROS DE CATEGORÍA ===== -->
-  <section class="wrap categories" id="catalogo">
-    <!button class="chip is-active" data-filter="todos">Todos /</button>
-    <!button class="chip" data-filter="figuras">Figuras /</button>
-    <!button class="chip" data-filter="posters">Pósters /</button>
-    <!button class="chip" data-filter="ropa">Ropa /</button>
-    <!button class="chip" data-filter="accesorios">Accesorios</button>
-  </section>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="contenedor hero__rejilla">
 
-  <!-- ===== PRODUCTO DESTACADO ===== -->
-  <section class="wrap featured" id="destacado">
-    <div class="featured__img" style="background-color:#D62828">
-      <span>Imagen del producto</span>
-    </div>
-    <div class="featured__info">
-      <p class="featured__label">Producto destacado</p>
-      <h2 class="featured__title">Figura Goku Namek SSJ, edición limitada</h2>
-      <p class="featured__text">32 cm, studio CK
-       Quedan pocas unidades de esta edición.</p>
-      <p class="price">S/90</p>
-      <button class="btn btn--primary add-to-cart" data-name="Figura Katana Ronin" data-price="45000">
-        Agregar al carrito
-      </button>
-    </div>
-  </section>
+        <div class="hero__texto">
+          <h1>Figuras de anime para tu estante, con envío a todo el Perú.</h1>
+          <p class="hero__sub">Ediciones limitadas y personajes de siempre, elegidos con cuidado para fans que se fijan en cada detalle.</p>
+          <div class="hero__acciones">
+            <a class="boton" href="#catalogo">Ver figuras</a>
+            <a class="boton boton--claro" href="#contacto">Preguntar por una figura</a>
+          </div>
+        </div>
 
-  <!-- ===== GRILLA DE PRODUCTOS ===== -->
-  <section class="wrap product-grid" id="productGrid">
-    <!-- Las tarjetas se generan con JavaScript desde script.js -->
-  </section>
+        <!-- Para usar una foto real: agrega style="--foto: url('img/goku.jpg')" a .vitrina -->
+        <article class="destacado" aria-labelledby="destacado-titulo">
+          <figure class="vitrina" role="img" aria-label="Espacio para la foto de la figura de Goku Namek SSJ">
+            <span class="sello">Quedan pocas unidades</span>
+            <span class="orbe"><b>32</b> cm</span>
+          </figure>
+          <header class="destacado__info">
+            <h2 id="destacado-titulo">Goku Namek SSJ, edición limitada</h2>
+            <p>Figura de 32 cm, studio CK.</p>
+            </header>
+            <footer class="destacado__compra">
+              <p class="precio">S/ 90</p>
+              <a class="boton" href="mailto:jose@JayatoStore.com?subject=Quiero%20la%20figura%20Goku%20Namek%20SSJ">Pedir esta figura</a>
+            </footer>
+        </article>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer" id="contacto">
-    <div class="wrap site-footer__row">
-      <div>
-        <p class="logo logo--footer">Jayato<span>Store</span></p>
-        <p class="site-footer__text">Envíos a todo el peru. Pagos con tarjeta,
-          transferencia y efectivo.</p>
       </div>
-      <div class="site-footer__links">
-        <p>jose@JayatoStore.com</p>
-        <p>@Jayatostore</p>
+    </section>
+
+    <!-- CONFIANZA -->
+    <section class="franja" aria-label="Condiciones de compra">
+      <ul class="contenedor franja__lista">
+        <li><strong>Envíos a todo el Perú</strong> Lima y provincias.</li>
+        <li><strong>Tres formas de pago</strong> Tarjeta, transferencia o efectivo.</li>
+        <li><strong>Stock limitado</strong> Cada edición tiene pocas unidades.</li>
+      </ul>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="seccion" id="catalogo">
+      <div class="contenedor">
+        <h2 class="titulo">Elige tu próxima figura</h2>
+        <p class="intro">Una selección corta, para que encuentres rápido lo que buscas. ¿No ves tu personaje? Escríbenos y lo consultamos.</p>
+
+        <div class="catalogo">
+
+          <article class="tarjeta" style="--tono: #FF6B1A">
+            <figure class="vitrina vitrina--chica" role="img" aria-label="Espacio para la foto de la figura de Goku Namek SSJ">
+              <span class="orbe orbe--chico"><b>32</b> cm</span>
+            </figure>
+            <header class="tarjeta__info">
+              <h3>Goku Namek SSJ</h3>
+              <p>Edición limitada, studio CK.</p>
+            </header>
+            <footer class="tarjeta__pie">
+                <span class="precio">S/ 90</span>
+                <a class="enlace" href="mailto:jose@JayatoStore.com?subject=Quiero%20la%20figura%20Goku%20Namek%20SSJ">Pedir</a>
+            </footer>
+          </article>
+
+          <!-- Ejemplo: reemplaza nombre, medida y precio por tus productos reales -->
+          <article class="tarjeta" style="--tono: #3DB8F5">
+            <figure class="vitrina vitrina--chica" role="img" aria-label="Espacio para la foto de la figura de Luffy">
+              <span class="orbe orbe--chico"><b>28</b> cm</span>
+            </figure>
+            <header class="tarjeta__info">
+              <h3>Luffy Gear 5</h3>
+              <p>Figura de colección.</p>
+            </header>
+            <footer class="tarjeta__pie">
+                <span class="precio">S/ 120</span>
+                <a class="enlace" href="mailto:jose@JayatoStore.com?subject=Quiero%20la%20figura%20Luffy%20Gear%205">Pedir</a>
+            </footer>
+          </article>
+
+          <article class="tarjeta" style="--tono: #FFB020">
+            <figure class="vitrina vitrina--chica" role="img" aria-label="Espacio para la foto de la figura de Naruto">
+              <span class="orbe orbe--chico"><b>25</b> cm</span>
+            </figure>
+            <header class="tarjeta__info">
+              <h3>Naruto Modo Sabio</h3>
+              <p>Figura de colección.</p>
+            </header>
+            <footer class="tarjeta__pie">
+                <span class="precio">S/ 85</span>
+                <a class="enlace" href="mailto:jose@JayatoStore.com?subject=Quiero%20la%20figura%20Naruto%20Modo%20Sabio">Pedir</a>
+            </footer>
+          </article>
+
+          <article class="tarjeta" style="--tono: #E5446D">
+            <figure class="vitrina vitrina--chica" role="img" aria-label="Espacio para la foto de la figura de Tanjiro">
+              <span class="orbe orbe--chico"><b>22</b> cm</span>
+            </figure>
+            <header class="tarjeta__info">
+              <h3>Tanjiro Kamado</h3>
+              <p>Figura de colección.</p>
+            </header>
+            <footer class="tarjeta__pie">
+                <span class="precio">S/ 75</span>
+                <a class="enlace" href="mailto:jose@JayatoStore.com?subject=Quiero%20la%20figura%20Tanjiro%20Kamado">Pedir</a>
+            </footer>
+          </article>
+
+        </div>
       </div>
+    </section>
+
+    <!-- CÓMO COMPRAR -->
+    <section class="seccion seccion--oscura" id="como-comprar">
+      <div class="contenedor">
+        <h2 class="titulo">Comprar es simple</h2>
+        <ol class="pasos">
+          <li>
+            <h3>Elige tu figura</h3>
+            <p>Mira el catálogo y anota el nombre de la que quieres.</p>
+          </li>
+          <li>
+            <h3>Escríbenos</h3>
+            <p>Por correo o Instagram. Te confirmamos si está disponible.</p>
+          </li>
+          <li>
+            <h3>Paga como prefieras</h3>
+            <p>Tarjeta, transferencia o efectivo.</p>
+          </li>
+          <li>
+            <h3>Recíbela en casa</h3>
+            <p>Enviamos a cualquier ciudad del Perú.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS -->
+    <section class="seccion" id="preguntas">
+      <div class="contenedor contenedor--angosto">
+        <h2 class="titulo">Preguntas frecuentes</h2>
+
+        <details>
+          <summary>¿Envían a provincias?</summary>
+          <p>Sí. Hacemos envíos a todo el Perú. Dinos tu ciudad y te confirmamos el costo y el plazo.</p>
+        </details>
+        <details>
+          <summary>¿Cómo puedo pagar?</summary>
+          <p>Aceptamos tarjeta, transferencia y efectivo.</p>
+        </details>
+        <details>
+          <summary>¿Las ediciones limitadas se agotan?</summary>
+          <p>Sí, quedan pocas unidades de cada una. Escríbenos antes de pagar para confirmar que sigue disponible.</p>
+        </details>
+        <details>
+          <summary>¿Qué más venden además de figuras?</summary>
+          <p>También tenemos pósters, ropa y accesorios de anime. Pregúntanos por lo que buscas.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+      <div class="contenedor contacto__fila">
+        <div>
+          <h2>¿Ya sabes cuál quieres?</h2>
+          <p>Cuéntanos qué figura te interesa y tu ciudad. Te respondemos con disponibilidad y envío.</p>
+        </div>
+        <div class="contacto__botones">
+          <a class="boton" href="mailto:jose@JayatoStore.com?subject=Consulta%20sobre%20figuras">jose@JayatoStore.com</a>
+          <a class="boton boton--claro" href="https://instagram.com/Jayatostore" rel="noopener">Instagram @Jayatostore</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie__fila">
+      <p class="logo logo--pie">Jayato<span>Store</span></p>
+      <p>Figuras, pósters, ropa y accesorios de anime. Envíos a todo el Perú.</p>
     </div>
   </footer>
 
-  <!-- ===== CARRITO (panel lateral simple) ===== -->
-  <aside class="cart-panel" id="cartPanel">
-    <div class="cart-panel__head">
-      <h3>Tu carrito</h3>
-      <button id="cartClose" aria-label="Cerrar carrito">✕</button>
-    </div>
-    <ul class="cart-panel__list" id="cartList"></ul>
-    <div class="cart-panel__total">
-      Total: <strong id="cartTotal">$0</strong>
-    </div>
-  </aside>
-  <div class="overlay" id="overlay"></div>
-
-  <script src="script.js"></script>
 </body>
 </html>
